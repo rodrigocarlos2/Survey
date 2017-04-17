@@ -4157,9 +4157,9 @@ var SurveyEditor = (function () {
         this.koViewType = __WEBPACK_IMPORTED_MODULE_0_knockout__["observable"]("designer");
         this.koIsShowDesigner = __WEBPACK_IMPORTED_MODULE_0_knockout__["computed"](function () { return self.koViewType() == "designer"; });
         this.selectDesignerClick = function () { self.showDesigner(); };
-        this.selectEditorClick = function () { self.showJsonEditor(); };
+        //this.selectEditorClick = function () { self.showJsonEditor(); };
         this.selectTestClick = function () { self.showTestSurvey(); };
-        this.selectEmbedClick = function () { self.showEmbedEditor(); };
+        //this.selectEmbedClick = function () { self.showEmbedEditor(); };
         this.generateValidJSONClick = function () { self.koGenerateValidJSON(true); };
         this.generateReadableJSONClick = function () { self.koGenerateValidJSON(false); };
         this.runSurveyClick = function () { self.showLiveSurvey(); };
