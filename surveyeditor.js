@@ -4630,6 +4630,29 @@ var SurveyEditor = (function () {
         this.setModified();
         this.survey.render();
     };
+
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    var latitude;
+    var longitude;
+
+    function success(pos) {
+
+      var crd = pos.coords;
+
+      latitude = crd.latitude;
+      longitude = crd.longitude;
+
+    };
+
+    function error(err) {
+      console.warn('ERROR(' + err.code + '): ' + err.message);
+    };
+
     SurveyEditor.prototype.showLiveSurvey = function () {
         
         var _this = this;
@@ -4660,8 +4683,10 @@ var SurveyEditor = (function () {
                 surveyjsExamplereRun.style.display = "none";
             
             survey.onComplete.add(function (sender) { if (surveyjsExampleResults)
+
+            navigator.geolocation.getCurrentPosition(success, error, options);
                 
-            surveyjsExampleResults.innerHTML = "Data: "+ _this.getLocString("ed.surveyResults") + JSON.stringify(survey.data) + " / Geolocalization: -7 -64" ; if (surveyjsExamplereRun)
+            surveyjsExampleResults.innerHTML = "Data: "+ _this.getLocString("ed.surveyResults") + JSON.stringify(survey.data) + " / Geolocalization: $latitude - $longitude" ; if (surveyjsExamplereRun)
                 
             surveyjsExamplereRun.style.display = ""; });
             
