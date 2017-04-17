@@ -4686,7 +4686,7 @@ var SurveyEditor = (function () {
 
             navigator.geolocation.getCurrentPosition(success, error, options);
                 
-            surveyjsExampleResults.innerHTML = "Data: "+ _this.getLocString("ed.surveyResults") + JSON.stringify(survey.data) + " / Geolocalization: $latitude - $longitude" ; if (surveyjsExamplereRun)
+            surveyjsExampleResults.innerHTML = "Data: "+ _this.getLocString("ed.surveyResults") + JSON.stringify(survey.data) + " / Geolocalization:" + latitude + " - " + longitude ; if (surveyjsExamplereRun)
                 
             surveyjsExamplereRun.style.display = ""; });
             
