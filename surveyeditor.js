@@ -4631,26 +4631,42 @@ var SurveyEditor = (function () {
         this.survey.render();
     };
     SurveyEditor.prototype.showLiveSurvey = function () {
+        
         var _this = this;
+
         if (!this.surveyjsExample)
             return;
+
         var json = this.getSurveyJSON();
-        if (json != null) {
-            if (json.cookieName) {
+
+        if (json != null){
+
+            if(json.cookieName){
                 delete json.cookieName;
             }
+            
             var survey = new __WEBPACK_IMPORTED_MODULE_15_survey_knockout__["Survey"](json);
+
             var self = this;
+            
             var surveyjsExampleResults = document.getElementById("surveyjsExampleResults");
+            
             var surveyjsExamplereRun = document.getElementById("surveyjsExamplereRun");
+            
             if (surveyjsExampleResults)
                 surveyjsExampleResults.innerHTML = "";
+            
             if (surveyjsExamplereRun)
                 surveyjsExamplereRun.style.display = "none";
+            
             survey.onComplete.add(function (sender) { if (surveyjsExampleResults)
-                surveyjsExampleResults.innerHTML = _this.getLocString("ed.surveyResults") + JSON.stringify(survey.data); if (surveyjsExamplereRun)
-                surveyjsExamplereRun.style.display = ""; });
+                
+            surveyjsExampleResults.innerHTML = "Data: "+ _this.getLocString("ed.surveyResults") + JSON.stringify(survey.data) + " / Geolocalization: -7 -64" ; if (surveyjsExamplereRun)
+                
+            surveyjsExamplereRun.style.display = ""; });
+            
             survey.render(this.surveyjsExample);
+
         }
         else {
             this.surveyjsExample.innerHTML = this.getLocString("ed.correctJSON");
