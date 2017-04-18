@@ -2969,7 +2969,7 @@ SurveyQuestionEditorDefinition.definition = {
     },
     "selectbase": {
         properties: ["hasOther", "choicesOrder", "colCount"],
-        tabs: [{ name: "choices", index: 10 }, { name: "choicesByUrl", index: 11 }]
+        tabs: [{ name: "choices", index: 10 }]
     },
     "dropdown": {
         properties: ["optionsCaption"]
@@ -2979,15 +2979,15 @@ SurveyQuestionEditorDefinition.definition = {
     },
     "matrixdropdowncolumn@checkbox": {
         properties: ["hasOther", "choicesOrder", "colCount"],
-        tabs: [{ name: "choices", index: 10 }, { name: "choicesByUrl", index: 11 }]
+        tabs: [{ name: "choices", index: 10 }]
     },
     "matrixdropdowncolumn@radiogroup": {
         properties: ["hasOther", "choicesOrder", "colCount"],
-        tabs: [{ name: "choices", index: 10 }, { name: "choicesByUrl", index: 11 }]
+        tabs: [{ name: "choices", index: 10 }]
     },
     "matrixdropdowncolumn@dropdown": {
         properties: ["hasOther", "choicesOrder", "optionsCaption"],
-        tabs: [{ name: "choices", index: 10 }, { name: "choicesByUrl", index: 11 }]
+        tabs: [{ name: "choices", index: 10 }]
     },
     "matrixdropdowncolumn@text": {
         properties: ["inputType", "placeHolder"]
